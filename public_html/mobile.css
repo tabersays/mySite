@@ -1,0 +1,100 @@
+/* 
+    Document   : mobile
+    Created on : Apr 8, 2014, 6:59:12 PM
+    Author     : Dr. Storm
+    Description:
+        organize screens for mobile phones with very small screens.
+*/
+body{
+    background-color: whitesmoke;
+}
+.top{
+    z-index: 1;
+    position: relative;
+    width: 99.5%;
+    
+    height: 100%;
+    background-color: darkblue;
+    
+    text-align: center;
+    color: whitesmoke;
+}
+.left{
+    position: relative;
+    float: left;
+    
+    width: 99.5%;
+    
+    height: 100%;
+    background-color: darkblue;
+    margin-bottom: 10px;  
+    text-align: center;
+    color: whitesmoke;
+}
+.body{
+    
+    position: relative;
+    
+    
+    
+    
+    
+    
+}
+h3{
+    display: inline;
+}
+ul{
+    display: inline;
+}
+.TRP{
+    display: inline;
+}
+.GM{
+    display: inline;
+}
+ 
+.highlight{
+    color: red;
+    text-decoration: underline;
+}
+.active{
+    color: red;
+}
+.about{
+    cursor:pointer;
+}
+
+.projects{
+    cursor:pointer;
+}
+.TRP{
+    cursor:pointer;
+}
+.GM{
+    cursor:pointer;
+}
+.resume{
+    cursor:pointer;
+}
+li{
+    text-align: left;
+}
+#about{
+    
+}
+#projects{
+    
+}
+#TRP{
+    
+}
+#GM{
+    
+}
+#resume{
+    
+}
+
+
+

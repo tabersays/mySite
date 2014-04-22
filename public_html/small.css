@@ -1,0 +1,88 @@
+/* 
+    Document   : small
+    Created on : Apr 8, 2014, 6:27:03 PM
+    Author     : Dr. Storm
+    Description:
+        organize site for smaller screens.
+*/
+
+body{
+    background-color: whitesmoke;
+}
+.top{
+    z-index: 1;
+    position: relative;
+    width: 99.5%;
+    
+    height: 100%;
+    background-color: darkblue;
+    
+    text-align: center;
+    color: whitesmoke;
+}
+.left{
+    position: relative;
+    float: left;
+    
+    width: 100px;
+    
+    height: 100%;
+    background-color: darkblue;
+    margin-bottom: 10px;  
+    text-align: center;
+    color: whitesmoke;
+}
+.body{
+    
+    position: absolute;
+    margin-left: 110px;
+    float: right;
+    
+    
+    
+    
+    
+}
+ 
+.highlight{
+    color: red;
+    text-decoration: underline;
+}
+.active{
+    color: red;
+}
+.about{
+    cursor:pointer;
+}
+
+.projects{
+    cursor:pointer;
+}
+.TRP{
+    cursor:pointer;
+}
+.GM{
+    cursor:pointer;
+}
+.resume{
+    cursor:pointer;
+}
+li{
+    text-align: left;
+}
+#about{
+    
+}
+#projects{
+    
+}
+#TRP{
+    
+}
+#GM{
+    
+}
+#resume{
+    
+}
+
