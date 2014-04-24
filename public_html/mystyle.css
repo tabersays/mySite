@@ -5,6 +5,16 @@
     Description:
         Organize content for large screens.
 */
+a{
+    text-decoration: none;
+    color:whitesmoke;
+}
+.blue{
+    color: darkblue;
+}
+.white{
+    color: whitesmoke;
+}
 body{
     background-color: whitesmoke;
 }

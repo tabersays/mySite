@@ -96,39 +96,7 @@ $(document).ready(function(){
         $('.resume').removeClass('active');
     });
     
-    $(".TRP").click(function(){
-        $('#about').hide();
-        $('.about').removeClass('active');
-        
-        $('#projects').hide();
-        $('.projects').removeClass('active');
-    
-        $('#TRP').show();
-        $('.TRP').addClass('active');
-    
-        $('#GM').hide();
-        $('.GM').removeClass('active');
-    
-        $('#resume').hide();
-        $('.resume').removeClass('active');
-    });
-    
-    $(".GM").click(function(){
-        $('#about').hide();
-        $('.about').removeClass('active');
-        
-        $('#projects').hide();
-        $('.projects').removeClass('active');
-    
-        $('#TRP').hide();
-        $('.TRP').removeClass('active');
-    
-        $('#GM').show();
-        $('.GM').addClass('active');
-    
-        $('#resume').hide();
-        $('.resume').removeClass('active');
-    });
+   
     
     $(".resume").click(function(){
         $('#about').hide();

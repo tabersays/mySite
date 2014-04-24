@@ -5,6 +5,16 @@
     Description:
         organize screens for mobile phones with very small screens.
 */
+a{
+    text-decoration: none;
+    
+}
+.blue{
+    color: darkblue;
+}
+.white{
+    color: whitesmoke;
+}
 body{
     background-color: whitesmoke;
 }

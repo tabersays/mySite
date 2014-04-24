@@ -5,7 +5,16 @@
     Description:
         organize site for smaller screens.
 */
-
+a{
+    text-decoration: none;
+    
+}
+.blue{
+    color: darkblue;
+}
+.white{
+    color: whitesmoke;
+}
 body{
     background-color: whitesmoke;
 }
