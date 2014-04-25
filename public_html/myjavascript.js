@@ -1,7 +1,10 @@
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+    Document   : myjavascript
+    Created on : Apr 8, 2014, 6:59:12 PM
+    Author     : Dr. Storm
+    Description:
+        allows for dynamic changes such as highlighting and body switching and css switching
+*/
 function adjustStyle(width) {
     width = parseInt(width);
     if (width < 700) {
