@@ -34,6 +34,12 @@ $(document).ready(function(){
     
     $('#resume').hide();
     
+    $('a').hover(function(){
+        $(this).addClass('highlight');
+    }, function(){
+        $(this).removeClass('highlight');
+    });
+    
     $(".about").hover(function(){
         $(this).addClass('highlight');
     }, function(){
