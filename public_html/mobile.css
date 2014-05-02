@@ -45,7 +45,7 @@ body{
     
     position: relative;
     margin-left: 0px;
-    float: right;
+    float: left;
     
     
 }
@@ -103,6 +103,11 @@ li{
 }
 #resume{
     
+}
+img { 
+    max-width: 100%; 
+    height: auto; 
+    width: 100%;
 }
 
 

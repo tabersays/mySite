@@ -46,11 +46,7 @@ body{
     position: absolute;
     margin-left: 110px;
     float: right;
-    
-    
-    
-    
-    
+     
 }
  
 .highlight{
@@ -93,5 +89,10 @@ li{
 }
 #resume{
     
+}
+img { 
+    max-width: 100%; 
+    height: auto; 
+    width: 100%;
 }
 
