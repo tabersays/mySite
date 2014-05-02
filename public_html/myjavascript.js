@@ -10,14 +10,17 @@ function adjustStyle(width) {
     if (width < 700) {
         $("#styleType").attr("href", "mobile.css");
         $(".notSmall").hide();
+        return;
     }
     else if (width > 700 && width < 1100) {
         $("#styleType").attr("href", "small.css");
         $(".notSmall").show();
+        return;
     }
     else {
         $("#styleType").attr("href", "mystyle.css"); 
-        
+        $(".notSmall").show();
+        return;
     }
 }
 $(document).ready(function(){
@@ -36,38 +39,50 @@ $(document).ready(function(){
     
     $('a').hover(function(){
         $(this).addClass('highlight');
+        return;
     }, function(){
         $(this).removeClass('highlight');
+        return;
     });
     
     $(".about").hover(function(){
         $(this).addClass('highlight');
+        return;
     }, function(){
         $(this).removeClass('highlight');
+        return;
     });
     
     $(".projects").hover(function(){
         $(this).addClass('highlight');
+        return;
     }, function(){
         $(this).removeClass('highlight');
+        return;
     });
     
     $(".TRP").hover(function(){
         $(this).addClass('highlight');
+        return;
     }, function(){
         $(this).removeClass('highlight');
+        return;
     });
     
     $(".GM").hover(function(){
         $(this).addClass('highlight');
+        return;
     }, function(){
         $(this).removeClass('highlight');
+        return;
     });
     
     $(".resume").hover(function(){
         $(this).addClass('highlight');
+        return;
     }, function(){
         $(this).removeClass('highlight');
+        return;
     });
     
     /*******Needs*work*will*be*a*function*call**************************/
@@ -86,6 +101,8 @@ $(document).ready(function(){
     
         $('#resume').hide();
         $('.resume').removeClass('active');
+        
+        return;
     });
     
     $(".projects").click(function(){
@@ -103,6 +120,8 @@ $(document).ready(function(){
     
         $('#resume').hide();
         $('.resume').removeClass('active');
+        
+        return;
     });
     
    
@@ -122,6 +141,8 @@ $(document).ready(function(){
         
         $('#resume').show();
         $('.resume').addClass('active');
+        
+        return;
     });
 });
 

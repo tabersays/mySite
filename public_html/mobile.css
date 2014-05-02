@@ -32,8 +32,8 @@ body{
 .left{
     position: relative;
     float: left;
-    
     width: 99.5%;
+    
     
     height: 100%;
     background-color: darkblue;
@@ -44,25 +44,24 @@ body{
 .body{
     
     position: relative;
-    
-    
-    
-    
+    margin-left: 0px;
+    float: right;
     
     
 }
+
+
 h3{
     display: inline;
 }
-ul{
-    display: inline;
-}
+
 .TRP{
     display: inline;
 }
 .GM{
     display: inline;
 }
+
  
 .highlight{
     color: red;
