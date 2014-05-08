@@ -11,6 +11,16 @@ function dayHeader() {
         {
             document.getElementById("header").innerHTML="Happy Commando Wednesday!";
         }
+    if(day.getMonth() === 4)
+    {
+        if(day.getDay() === 0)
+            {
+                if(7 <= day.getDate() <= 13)
+                    {
+                        document.getElementById("header").innerHTML="Happy Mothers Day!";
+                    }
+            }
+    }
     return;
 }
 function adjustStyle(width) {
@@ -49,47 +59,7 @@ $(document).ready(function(){
     
     $('#resume').hide();
     
-    $('a').hover(function(){
-        $(this).addClass('highlight');
-        return;
-    }, function(){
-        $(this).removeClass('highlight');
-        return;
-    });
-    
-    $(".about").hover(function(){
-        $(this).addClass('highlight');
-        return;
-    }, function(){
-        $(this).removeClass('highlight');
-        return;
-    });
-    
-    $(".projects").hover(function(){
-        $(this).addClass('highlight');
-        return;
-    }, function(){
-        $(this).removeClass('highlight');
-        return;
-    });
-    
-    $(".TRP").hover(function(){
-        $(this).addClass('highlight');
-        return;
-    }, function(){
-        $(this).removeClass('highlight');
-        return;
-    });
-    
-    $(".GM").hover(function(){
-        $(this).addClass('highlight');
-        return;
-    }, function(){
-        $(this).removeClass('highlight');
-        return;
-    });
-    
-    $(".resume").hover(function(){
+    $('.click').hover(function(){
         $(this).addClass('highlight');
         return;
     }, function(){
