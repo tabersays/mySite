@@ -33,7 +33,7 @@ body{
     position: relative;
     float: left;
     
-    width: 100px;
+    width: 150px;
     
     height: 100%;
     background-color: darkblue;
@@ -44,7 +44,7 @@ body{
 .body{
     
     position: absolute;
-    margin-left: 110px;
+    margin-left: 160px;
     float: right;
      
 }
