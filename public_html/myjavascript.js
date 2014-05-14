@@ -53,9 +53,7 @@ $(document).ready(function(){
     });
     $('#projects').hide();
     
-    $('#TRP').hide();
-    
-    $('#GM').hide();
+    //$('#GM').hide();
     
     $('#resume').hide();
     
@@ -75,11 +73,11 @@ $(document).ready(function(){
         $('#projects').hide();
         $('.projects').removeClass('active');
     
-        $('#TRP').hide();
         $('.TRP').removeClass('active');
     
-        $('#GM').hide();
         $('.GM').removeClass('active');
+        
+        $('.CRPTD').removeClass('active');
     
         $('#resume').hide();
         $('.resume').removeClass('active');
@@ -94,11 +92,11 @@ $(document).ready(function(){
         $('#projects').show();
         $('.projects').addClass('active');
     
-        $('#TRP').hide();
         $('.TRP').removeClass('active');
     
-        $('#GM').hide();
         $('.GM').removeClass('active');
+        
+        $('.CRPTD').removeClass('active');
     
         $('#resume').hide();
         $('.resume').removeClass('active');
@@ -106,6 +104,62 @@ $(document).ready(function(){
         return;
     });
     
+    $('.TRP').click(function(){
+        $('#about').hide();
+        $('.about').removeClass('active');
+        
+        $('#projects').hide();
+        $('.projects').removeClass('active');
+    
+        $('.TRP').addClass('active');
+    
+        $('.GM').removeClass('active');
+        
+        $('.CRPTD').removeClass('active');
+    
+        $('#resume').hide();
+        $('.resume').removeClass('active');
+        
+        return;
+    });
+    
+    $('.GM').click(function(){
+        $('#about').hide();
+        $('.about').removeClass('active');
+        
+        $('#projects').hide();
+        $('.projects').removeClass('active');
+    
+        $('.TRP').removeClass('active');
+    
+        $('.GM').addClass('active');
+        
+        $('.CRPTD').removeClass('active');
+    
+        $('#resume').hide();
+        $('.resume').removeClass('active');
+        
+        return;
+    });
+    
+    $('.CRPTD').click(function(){
+        $('#about').hide();
+        $('.about').removeClass('active');
+        
+        $('#projects').hide();
+        $('.projects').removeClass('active');
+    
+        $('.TRP').removeClass('active');
+    
+        $('.GM').removeClass('active');
+        
+        $('.CRPTD').addClass('active');
+    
+        $('#resume').hide();
+        $('.resume').removeClass('active');
+        
+        return;
+    });
    
     
     $(".resume").click(function(){
@@ -115,11 +169,11 @@ $(document).ready(function(){
         $('#projects').hide();
         $('.projects').removeClass('active');
     
-        $('#TRP').hide();
         $('.TRP').removeClass('active');
     
-        $('#GM').hide();
         $('.GM').removeClass('active');
+        
+        $('.CRPTD').removeClass('active');
         
         $('#resume').show();
         $('.resume').addClass('active');
