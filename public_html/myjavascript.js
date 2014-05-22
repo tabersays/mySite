@@ -30,7 +30,7 @@ function adjustStyle(width) {
         $(".notSmall").hide();
         
     }
-    else if (width > 700 && width < 1100) {
+    else if (width > 700 && width < 1300) {
         $("#styleType").attr("href", "small.css");
         $(".notSmall").show();
         
