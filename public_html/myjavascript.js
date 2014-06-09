@@ -5,21 +5,39 @@
     Description:
         allows for dynamic changes such as highlighting and body switching and css switching
 */
-function dayHeader() {
+function dayHeader() //Allows the header to change for different holidays
+{
     var day = new Date();
-    if(day.getDay() === 3)
+    if(day.getDay() === 3)//if it is commando Wednesday
         {
-            document.getElementById("header").innerHTML="Happy Commando Wednesday!";
+            document.getElementById("header").textContent="Happy Commando Wednesday!";
         }
-    if(day.getMonth() === 4)
+    if(day.getMonth() === 4)//if it is mothers day
     {
         if(day.getDay() === 0)
             {
                 if(7 <= day.getDate() <= 13)
                     {
-                        document.getElementById("header").innerHTML="Happy Mothers Day!";
+                        document.getElementById("header").textContent="Happy Mother's Day!";
                     }
             }
+    }
+    if(day.getMonth() === 5)//if it is fathers day
+    {
+        if(day.getDay() === 0)
+        {
+            if(14 <= day.getDate() <= 20)
+            {
+                document.getElementById("header").textContent="Happy Father's Day!";
+            }
+        }
+    }
+    if(day.getMonth() === 6)//if it is independance day
+    {
+        if(day.getDate() === 3)
+        {
+            document.getElementById("header").textContent="Happy Independence Day!";
+        }
     }
     return;
 }
