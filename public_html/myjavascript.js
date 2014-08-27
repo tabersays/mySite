@@ -12,11 +12,18 @@ function dayHeader() //Allows the header to change for different holidays
         {
             document.getElementById("header").textContent="Happy Commando Wednesday!";
         }
+    if(day.getMonth() === 5)
+        {
+            if(day.getDate() === 10)
+            {
+                document.getElementById("header").textContent="Happy Birthday Grandma!";
+            }
+        }
     if(day.getMonth() === 4)//if it is mothers day
     {
         if(day.getDay() === 0)
             {
-                if(7 <= day.getDate() <= 13)
+                if(8 <= day.getDate() <= 14)
                     {
                         document.getElementById("header").textContent="Happy Mother's Day!";
                     }
@@ -26,7 +33,7 @@ function dayHeader() //Allows the header to change for different holidays
     {
         if(day.getDay() === 0)
         {
-            if(14 <= day.getDate() <= 20)
+            if(15 <= day.getDate() <= 21)
             {
                 document.getElementById("header").textContent="Happy Father's Day!";
             }
@@ -34,7 +41,7 @@ function dayHeader() //Allows the header to change for different holidays
     }
     if(day.getMonth() === 6)//if it is independance day
     {
-        if(day.getDate() === 3)
+        if(day.getDate() === 4)
         {
             document.getElementById("header").textContent="Happy Independence Day!";
         }
