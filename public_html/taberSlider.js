@@ -1,30 +1,28 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 
-function SliderController($scope){
-    $scope.mySlider = "sliderPic/SliderBar.png";
-    $scope.slider = ['-','-','-','-','-','-','-','-','-','-'];
-    
-//    $scope.drawSlider = function(){
-//       for(slide in slider)
-//       {
-//           var text;
-//           return text += slide;
-//       }
-//    };
-//    $scope.text = drawSlider;
+var myApp = angular.module('mySlider', []);
+
+myApp.controller('SliderController', ['$scope', function($scope) {
     $scope.value = 5;
-}
-//{
-//    var sliderPics = ["sliderPic/SliderBar.png", "sliderPic/SliderBut.png"];
-//    var app = angular.module('Slider',[]);
-//    app.controller('SliderController', function()
-//    {
-//        this.mySlider = sliderPics;
-//    });
-//    
-//});
+    
+    $scope.slider = ['-','-','-','-','o','-','-','-','-'];
+    $scope.increase = function() {
+        $scope.slider[$scope.value - 1] = '-';
+        $scope.value = $scope.value + 1;
+        $scope.slider[$scope.value - 1] = 'o';
+    };
 
+    $scope.decrease = function() {
+        $scope.slider[$scope.value - 1] = '-';
+        $scope.value = $scope.value - 1;
+        $scope.slider[$scope.value - 1] = 'o';
+    };
+//    $scope.draw = function() {
+//        var slider = ['-','-','-','-','-','-','-','-','-'];
+//        for(var i = 0; i < 10; i++)
+//        {
+//            
+//        }
+//    };
+    
+}]);

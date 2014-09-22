@@ -36,27 +36,13 @@
             <a href="resume.html" class="resume notSmall white click"><h3 >Resume</h3></a>
         </div>
         
-        <div class="body">
-            
-            
-            
-            <div ng-app ng-controller="SliderController">
-                <input type="button" value="Up">
-<!--                <ul>
-                    <li ng-repeat="slide in slider">{{slide}}</li>
-                </ul>-->
-                <p>{{slider[0]+slider[1]+slider[2]+slider[3]+slider[4]+slider[5]+slider[6]+slider[7]+slider[8]+slider[9]}}</p>
-                <p>{{value}}</p>
-                <input type="button" value="Down">
-                <img ng-src="{{mySlider}}">
-            
-                
-            </div>
-            
-            
-            <p>----------------------------------------------------------</p>
-            <p>"Fantasy is not a crime, find your castle in the sky!"</p>
-            <p>DJ Satomi Castle in the Sky.</p>
+        <div class="body" ng-app="mySlider">
+            <div ng-controller="SliderController">
+                <button ng-click="decrease()">-</button>
+                <span>{{slider[0]+slider[1]+slider[2]+slider[3]+slider[4]+slider[5]+slider[6]+slider[7]+slider[8]+slider[9]}}</span>
+                <button ng-click="increase()">+</button>
+                <p>The value is {{value}}!</p>
+            </div>  
         </div>
         
         
