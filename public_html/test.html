@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<!-- 
+﻿<!DOCTYPE html>
+<!--
     Document   : index
     Created on : Apr 8, 2014, 6:59:12 PM
     Author     : Dr. Storm
@@ -7,44 +7,44 @@
         The main website page this holds all the info so far. The content shown is chosen by the js file. My projects get there own HTML file due to all the pictures
 -->
 <html>
-    <head>
-        <link rel="shortcut icon" href="icon/favicon.ico" >
-        <title >TSF</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href="mystyle.css" rel="stylesheet" type="text/css" id="styleType">
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!--This links me to googles java script-->
-        <script src="myjavascript.js"></script><!--My java script file-->
-        <script src="taberSlider.js"></script>
-    </head>
-    <body>
-        
-        <div class="top">
-            <h2 id="header">Welcome to the site of Taber Storm!</h2>
-        </div>
-        
-        <div class="left">
-            <a href="index.html" class="about notSmall white click"><h3 >About</h3></a>
-            <a href="projects.html" class="projects notSmall white click"><h3 >Projects</h3></a>
-            <a href="CrypTrd.html" class="CRPTD white click notSmall"><h3>CryptsyTrader</h3></a>
-            <a href="TRP.html" class="TRP notSmall white click"><h3 >TRP</h3></a>
-            <a href="GM.html" class="GM notSmall white click"><h3>Gm Tools</h3></a>
-            <a href="test.html" class="notSmall white click active"><h3>AngularJS</h3></a>
-            <a href="calendar.html" class="notSmall white click"><h3>Schedule</h3></a>
-            <a href="resume.html" class="resume notSmall white click"><h3 >Resume</h3></a>
-        </div>
-        
-        <div class="body" ng-app="mySlider">
+<head>
+    <link rel="shortcut icon" href="icon/favicon.ico">
+    <title>TSF</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="mystyle.css" rel="stylesheet" type="text/css" id="styleType">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!--This links me to googles java script-->
+    <script src="myjavascript.js"></script><!--My java script file-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular.js"></script>
+    <script src="bossy.slider.js"></script>
+</head>
+<body>
+
+    <div class="top">
+        <h2 id="header">Welcome to the site of Taber Storm!</h2>
+    </div>
+
+    <div class="left">
+        <a href="index.html" class="about notSmall white click"><h3>About</h3></a>
+        <a href="projects.html" class="projects notSmall white click"><h3>Projects</h3></a>
+        <a href="CrypTrd.html" class="CRPTD white click notSmall"><h3>CryptsyTrader</h3></a>
+        <a href="TRP.html" class="TRP notSmall white click"><h3>TRP</h3></a>
+        <a href="GM.html" class="GM notSmall white click"><h3>Gm Tools</h3></a>
+        <a href="test.html" class="notSmall white click"><h3>AngularJS</h3></a>
+        <a href="calendar.html" class="notSmall white click"><h3>Schedule</h3></a>
+        <a href="resume.html" class="resume notSmall white click"><h3>Resume</h3></a>
+    </div>
+
+    <div class="body">
+        <div ng-app="app.directive.bossy.slider">
             <div ng-controller="SliderController">
-                <button ng-click="decrease()">-</button>
-                <span>{{slider[0]+slider[1]+slider[2]+slider[3]+slider[4]+slider[5]+slider[6]+slider[7]+slider[8]+slider[9]}}</span>
-                <button ng-click="increase()">+</button>
-                <p>The value is {{value}}!</p>
-            </div>  
+                <bossy-slider></bossy-slider>
+                <bossy-slider></bossy-slider>
+            </div>
         </div>
-        
-        
-    </body>
+    </div>
+
+
+</body>
 </html>
