@@ -10,12 +10,12 @@ angular.module('app.directive.bossy.slider', [])
         //$scope.defaults = {
         //    max: 9,
         //    min: 1,
-        //    orientation: 'horizantal'
+        //    orientation: 'horizontal'
         //};
         $scope.renderHtml = function (html_code) {
             return $sce.trustAsHtml(html_code);
         };
-        $scope.orientation = 'horizantal';
+        $scope.orientation = 'horizontal';
         
         //$scope.option = {
         //    wheels: '3',
