@@ -29,11 +29,12 @@ body{
     text-align: center;
     color: whitesmoke;
 }
+
 .left{
     position: relative;
     float: left;
-    
-    width: 10%;
+    z-index: 1;
+    width: 150px;
     
     
     height: 100%;
@@ -42,14 +43,11 @@ body{
     color: whitesmoke;
 }
 .body{
-    
-    position: relative;
+
+    position: absolute;
+    margin-left: 160px;
     float: right;
-    
-    width: 89%;
-    height: 100%;
-    
-    
+
 }
  
 .highlight{
@@ -81,30 +79,58 @@ body{
 li{
     text-align: left;
 }
-#about{
-    
-}
-#projects{
-    
-}
-#TRP{
-    
-}
-#GM{
-    
-}
-#calendar{
-    
-}
-#resume{
-    
-}
-.notSmall{
-    
-}
+
 img { 
     max-width: 750px; 
     max-height: 750px;
     height: auto; 
     width: auto;
+}
+
+
+@media screen and (max-width: 768px) {
+    /*I borrowed the 3 line menu from the website http://css-tricks.com/three-line-menu-navicon/*/
+    #menu {
+        position: relative;
+        width:80.5%;
+    }
+    #menu:before {
+        content: "";
+        position: absolute;
+        left: 0.25em;
+        top: 0.25em;
+        width: 1em;
+        height: 0.15em;
+        background: whitesmoke;
+        box-shadow:
+        0 0.25em 0 0 whitesmoke,
+        0 0.5em 0 0 whitesmoke;
+    }
+    #menu {
+        width:99.5%;
+        display: block;
+        background:darkblue;
+        color: whitesmoke;
+        font-size:3em;
+        text-align: left;
+        cursor: default;
+    }
+    #nav.js {
+        display: none;
+
+
+    }
+    .body{
+
+        position: absolute;
+        margin-left: 10px;
+        float: right;
+
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #menu {
+        display: none;
+    }
 }

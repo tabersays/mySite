@@ -1,52 +1,85 @@
+/*This is a slider widget created in angular as part of the BossyUI widgets.
+* The easiest way to use the slider is to include it in your HTML and then
+* create a tag <bossy-slider></bossy-slider>. This widget take in several
+* ways to customize. Currently it takes max, min, and orientation. It is
+* expected to take color and button color. ex.
+* <bossy-slider max="20" min="-5" orientation="vertical"></bossy-slider>*/
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 angular.module('app.directive.bossy.slider', [])
     .controller('SliderController', ['$scope','$sce', function ($scope, $sce) {
-        $scope.value = 5;
-        $scope.max = 9;
+
+
+        //these are our default values and are the variables that can be changed by user of our widgets
+        $scope.max = 10;
         $scope.min = 1;
+        $scope.orientation = "horizontal";
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //"Art" for a bar piece
         $scope.barPiece = '<div style="display:inline-block;width:10px;height:10px;background-color:#0000FF;"></div>';
+        //"Art" for a slider button
         $scope.slideBut = '<div style="display:inline-block;width:10px;height:10px;background-color:red;"></div>';
-        $scope.slider = [$scope.barPiece, $scope.barPiece, $scope.barPiece, $scope.barPiece, $scope.slideBut, $scope.barPiece, $scope.barPiece, $scope.barPiece, $scope.barPiece];
-        $scope.string = $scope.slider.toString().split(",").join("");
-        //$scope.defaults = {
-        //    max: 9,
-        //    min: 1,
-        //    orientation: 'horizantal'
-        //};
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //as it is named it is used to maintain correct alignment with the slider bar array
+        var offSet;
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /*makeBar()
+        * This initializes the array that keeps track of all the pieces of the slider,
+        * it initializes the off-set used to map the sliders value to the correct position
+        * in the array*/
+        $scope.makeBar = function(){
+            var constructSlider = [];
+            for(var current = $scope.min; current <= $scope.max; current++)
+            {
+                constructSlider.push($scope.barPiece);
+            }
+
+            offSet = $scope.min -1;
+            //button should show up in the middle now or close to if uneven
+            $scope.value = parseInt(($scope.max + $scope.min)/2);
+            constructSlider[$scope.value - ($scope.min)] = $scope.slideBut;
+            return constructSlider;
+        };
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /*renderHTML(string)
+        * This take a string in the format of HTML and validates it for use as HTML*/
         $scope.renderHtml = function (html_code) {
             return $sce.trustAsHtml(html_code);
         };
-        $scope.orientation = 'horizantal';
-        
-        //$scope.option = {
-        //    wheels: '3',
-        //    color: 'blue'
-        //};
-        //$scope.option = $scope.setter;
-        //angular.extend($scope.defaults, $scope.option);
-        //angular.extend($scope.sliderDefault, $scope.options);
-        //angular.extend($scope.sliderDefault.orientation, options);
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //checks bounds when attempting to decrease the value
+        /*increase()
+        * This checks bounds when attempting to increase the value and moves the position
+        * of the slider button and updates the value.*/
         $scope.increase = function () {
             if ($scope.value < $scope.max) {
-                $scope.slider[$scope.value - 1] = $scope.barPiece;
+                $scope.slider[$scope.value - offSet - 1] = $scope.barPiece;
                 $scope.value = $scope.value + 1;
-                $scope.slider[$scope.value - 1] = $scope.slideBut;
+                $scope.slider[$scope.value - offSet - 1] = $scope.slideBut;
             }
             $scope.draw();
         };
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //checks bounds when attempting to decrease the value
+        /*decrease()
+         * This checks bounds when attempting to decrease the value and moves the position
+         * of the slider button and updates the value.*/
         $scope.decrease = function () {
             if ($scope.value > $scope.min) {
-                $scope.slider[$scope.value - 1] = $scope.barPiece;
+                $scope.slider[$scope.value - offSet - 1] = $scope.barPiece;
                 $scope.value = $scope.value - 1;
-                $scope.slider[$scope.value - 1] = $scope.slideBut;
+                $scope.slider[$scope.value - offSet - 1] = $scope.slideBut;
             }
             $scope.draw();
         };
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //This function is to bind the decrease and increase function with the arrow keys
+        /*keyBind($event)
+        * This function is to bind the decrease and increase function with the arrow keys*/
         $scope.keyBind = function (ev) {
             $scope.pressed = ev.which;
             //If arrow key(Left or Down) is pressed then call the decrease() function to decrease the value.
@@ -58,19 +91,21 @@ angular.module('app.directive.bossy.slider', [])
                 $scope.increase();
             }
         };
-        
-        $scope.draw = function () {  //function takes the slider array and creates a string of the contents. 
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /*draw()
+        * This function takes the slider array and creates a string of the contents. So it can be rendered
+        * in HTML.*/
+        $scope.draw = function () {
             $scope.string = "";
             //changed to the angular forEach loop for readability
             angular.forEach($scope.slider, function (item) {
                 $scope.string += item;
             })
+            //this should allow the programmer access to this value outside the slider controller
+            $scope.ngModel = $scope.value;
             return $scope.string;
-                
         };
-        $scope.renderHtml = function (html_code) {
-            return $sce.trustAsHtml(html_code);
-        };
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }]).directive('bossySlider', function () {
         return {
@@ -78,9 +113,26 @@ angular.module('app.directive.bossy.slider', [])
             restrict: 'AE',
             controller: 'SliderController',
             //This is the template the slider form takes and inserts into HTML
-            template: '<button ng-click="decrease()" ng-keydown="keyBind($event)">-</button><span ng-bind-html="renderHtml(string)">{{}}</span><button ng-click="increase()" ng-keydown="keyBind($event)">+</button><p>The value is {{value}} and orientation is {{options}}!</p>',
+            template: '<button ng-click="decrease()" ng-keydown="keyBind($event)">-</button><span ng-bind-html="renderHtml(string)"></span><button ng-click="increase()" ng-keydown="keyBind($event)">+</button>',
             scope: {
-                options: '@options'
+                ngModel: '='
+                },
+            //This allows us to pull input from the elements attributes
+            link: function(scope, iElem, iAttr){
+                //checks to see if there is a max attribute
+                if(iAttr.max){
+                    scope.max = parseInt(iAttr.max);
+                }
+                //checks to see if there is a min attribute
+                if(iAttr.min){
+                    scope.min = parseInt(iAttr.min);
+                }
+                //checks to see if there is a orientation attribute
+                if(iAttr.orientation){
+                    scope.orientation = iAttr.orientation;
+                }
+                scope.slider = scope.makeBar();
+                scope.draw();
             }
         }
     });

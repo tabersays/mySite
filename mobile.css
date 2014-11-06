@@ -29,15 +29,31 @@ body{
     text-align: center;
     color: whitesmoke;
 }
+#menu {
+    position: relative;
+    padding-left: 1.25em;
+}
+#menu:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    width: 1em;
+    height: 0.15em;
+    background: black;
+    box-shadow:
+    0 0.25em 0 0 black,
+    0 0.5em 0 0 black;
+}
 .left{
     position: relative;
-    float: left;
+    float: top;
+
     width: 99.5%;
-    
-    
+
+
     height: 100%;
     background-color: darkblue;
-    margin-bottom: 10px;  
     text-align: center;
     color: whitesmoke;
 }

@@ -5,6 +5,8 @@
     Description:
         allows for dynamic changes such as highlighting and body switching and css switching
 */
+
+
 function dayHeader() //Allows the header to change for different holidays
 {
     var day = new Date();
@@ -48,36 +50,46 @@ function dayHeader() //Allows the header to change for different holidays
     }
     return;
 }
-function adjustStyle(width) {
+/*function adjustStyle(width) {
     width = parseInt(width);
     if (width < 700) {
         $("#styleType").attr("href", "mobile.css");
-        $(".notSmall").hide();
-        
+        //$(".notSmall").hide();
+
     }
     else if (width > 700 && width < 1300) {
         $("#styleType").attr("href", "small.css");
-        $(".notSmall").show();
-        
+        //$(".notSmall").show();
+
     }
     else {
-        $("#styleType").attr("href", "mystyle.css"); 
-        $(".notSmall").show();
-        
+        $("#styleType").attr("href", "mystyle.css");
+        //$(".notSmall").show();
+
     }
     return;
-}
+}*/
+
 
 $(document).ready(function(){
-    
+
     dayHeader();
-    adjustStyle($(this).width());
-    
-    $(window).resize(function() {
+/*    adjustStyle($(this).width());*/
+
+/*    $(window).resize(function() {
         adjustStyle($(this).width());
+    });*/
+    $(window).resize(function(){
+        if(window.innerWidth > 768) {
+            $("#nav").removeAttr("style");
+        }
     });
-    
-    
+    $("#nav").addClass("js").before('<div id="menu">&nbsp;</div>');
+    $("#menu").click(function(){
+        $("#nav").toggle();
+    });
+
+
     $('.click').hover(function(){
         $(this).addClass('highlight');
         return;
@@ -85,9 +97,8 @@ $(document).ready(function(){
         $(this).removeClass('highlight');
         return;
     });
-    
-});
 
+});
 
 
 
