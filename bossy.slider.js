@@ -15,11 +15,11 @@ angular.module('app.directive.bossy.slider', [])
         $scope.min = 1;
         $scope.orientation = "horizontal";
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        var display = 'display:inline-block;';
         //"Art" for a bar piece
-        $scope.barPiece = '<div style="display:inline-block;width:10px;height:10px;background-color:#0000FF;"></div>';
+        $scope.barPiece = '<div style="' + display + 'width:10px;height:10px;background-color:#0000FF;"></div>';
         //"Art" for a slider button
-        $scope.slideBut = '<div style="display:inline-block;width:10px;height:10px;background-color:red;"></div>';
+        $scope.slideBut = '<div style="' + display + 'width:10px;height:10px;background-color:red;"></div>';
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //as it is named it is used to maintain correct alignment with the slider bar array
@@ -32,6 +32,12 @@ angular.module('app.directive.bossy.slider', [])
         * in the array*/
         $scope.makeBar = function(){
             var constructSlider = [];
+            if($scope.orientation === "vertical"){
+                display = '';
+                //I'll need to do this better
+                $scope.barPiece = '<div style="' + display + 'width:10px;height:10px;background-color:#0000FF;"></div>';
+                $scope.slideBut = '<div style="'+ display + 'width:10px;height:10px;background-color:red;"></div>';
+            }
             for(var current = $scope.min; current <= $scope.max; current++)
             {
                 constructSlider.push($scope.barPiece);
@@ -98,9 +104,22 @@ angular.module('app.directive.bossy.slider', [])
         $scope.draw = function () {
             $scope.string = "";
             //changed to the angular forEach loop for readability
-            angular.forEach($scope.slider, function (item) {
-                $scope.string += item;
-            })
+            if ($scope.orientation === "vertical"){
+                var tempSlider = [];
+                angular.forEach($scope.slider, function(item){
+                    tempSlider.push(item);
+                })
+                tempSlider.reverse();
+                angular.forEach(tempSlider, function (item) {
+                    $scope.string += item;
+                })
+            }
+            else{
+                angular.forEach($scope.slider, function (item) {
+                    $scope.string += item;
+                })
+            }
+
             //this should allow the programmer access to this value outside the slider controller
             $scope.ngModel = $scope.value;
             return $scope.string;
@@ -131,6 +150,7 @@ angular.module('app.directive.bossy.slider', [])
                 if(iAttr.orientation){
                     scope.orientation = iAttr.orientation;
                 }
+
                 scope.slider = scope.makeBar();
                 scope.draw();
             }

@@ -3,7 +3,7 @@
     Created on : Apr 8, 2014, 6:59:12 PM
     Author     : Dr. Storm
     Description:
-        Organize content for large screens.
+        My stylesheet for the website. Simple and clean
 */
 a{
     text-decoration: none;
@@ -57,6 +57,7 @@ body{
 .active{
     color: red;
 }
+
 .about{
     cursor:pointer;
 }

@@ -3,7 +3,7 @@
     Created on : Apr 8, 2014, 6:59:12 PM
     Author     : Dr. Storm
     Description:
-        allows for dynamic changes such as highlighting and body switching and css switching
+        Allows for some dynamic changes to the header and also helps with the change to mobile mode, and highlights
 */
 
 
@@ -41,44 +41,27 @@ function dayHeader() //Allows the header to change for different holidays
             }
         }
     }
-    if(day.getMonth() === 6)//if it is independance day
+    if(day.getMonth() === 6)//if it is independence day
     {
         if(day.getDate() === 4)
         {
             document.getElementById("header").textContent="Happy Independence Day!";
         }
     }
+    if(day.getMonth() === 10)//if it is halloween
+    {
+        if(day.getDay() === 31)
+        {
+            document.getElementById("header").textContent="Happy Halloween!";
+        }
+    }
     return;
 }
-/*function adjustStyle(width) {
-    width = parseInt(width);
-    if (width < 700) {
-        $("#styleType").attr("href", "mobile.css");
-        //$(".notSmall").hide();
-
-    }
-    else if (width > 700 && width < 1300) {
-        $("#styleType").attr("href", "small.css");
-        //$(".notSmall").show();
-
-    }
-    else {
-        $("#styleType").attr("href", "mystyle.css");
-        //$(".notSmall").show();
-
-    }
-    return;
-}*/
 
 
 $(document).ready(function(){
 
     dayHeader();
-/*    adjustStyle($(this).width());*/
-
-/*    $(window).resize(function() {
-        adjustStyle($(this).width());
-    });*/
     $(window).resize(function(){
         if(window.innerWidth > 768) {
             $("#nav").removeAttr("style");
