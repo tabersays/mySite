@@ -41,6 +41,7 @@
 
         <div ng-app="bossy.slider">
 
+
             <p>
                 This is a work in progress of a slider widget. This widget is using AngularJS and is not implementing
                 JQuery. That said it is still under progress. This widget will be part of a collection of widgets from
@@ -65,7 +66,8 @@
             <p>The value is {{mine7}}!</p>
 
             <br>
-            <p>The slider supports several options such as the fill bar color, slider circle color, step size, max, and
+            <input type="checkbox" ng-model="checked" ng-init="checked=true" />
+            <p ng-if="checked">The slider supports several options such as the fill bar color, slider circle color, step size, max, and
                 min to name a few</p>
             <br>
 
@@ -91,7 +93,12 @@
 
         </div>
     </div>
+<script>
 
+    var myApp = angular.module('myApp', []);
+
+
+</script>
 
 </body>
 </html>
