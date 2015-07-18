@@ -1,67 +1,49 @@
-<!DOCTYPE html>
-<!-- 
+<!--
     Document   : index
     Created on : Apr 8, 2014, 6:59:12 PM
     Author     : Dr. Storm
     Description:
         The main website page this holds all the info so far. The content shown is chosen by the js file. My projects get there own HTML file due to all the pictures
 -->
-<html>
-    <head>
-        <link rel="shortcut icon" href="icon/favicon.ico" >
-        <title >TSF</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href="mystyle.css" rel="stylesheet" type="text/css" id="styleType">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script><!--This links me to googles java script-->
-        <script src="myjavascript.js"></script><!--My java script file-->
-    </head>
-    <body>
-        
-        <div class="top">
-            <h2 id="header">Welcome to the site of Taber Storm!</h2>
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <link rel="shortcut icon" href="icon/favicon.ico">
+    <title>TSF</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/bossy.slider.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<div class="row">
+    <header class="col-xs-12 text-center">
+        <h2>Welcome to the site of Taber Storm!</h2>
+    </header>
+</div>
+
+
+<div class="row">
+    <nav class="col-xs-12 col-sm-2">
+        <div class="container-fluid">
+            <ul class="nav nav-pills nav-stacked" ng-controller="navController">
+                <li ng-repeat="item in navItems" ng-class="{active: isActive(item)}"><a href="#{{item.path}}">{{item.name}}</a></li>
+            </ul>
+            <br>
         </div>
-        
-        <div class="left" id="nav">
+    </nav>
 
-                <a href="index.html" class="about notSmall white click active"><h3 >About</h3></a>
-                <a href="projects.html" class="projects notSmall white click"><h3 >Projects</h3></a>
-                <a href="CrypTrd.html" class="CRPTD white click notSmall"><h3>CryptsyTrader</h3></a>
-                <a href="TRP.html" class="TRP notSmall white click"><h3 >TRP</h3></a>
-                <a href="GM.html" class="GM notSmall white click"><h3>Gm Tools</h3></a>
-                <a href="test.html" class="notSmall white click"><h3>AngularJS</h3></a>
-                <a href="calendar.html" class="notSmall white click"><h3>Schedule</h3></a>
-                <a href="resume.html" class="resume notSmall white click"><h3 >Resume</h3></a>
-        </div> 
-        
-        <div class="body">
-            <div id="about"><!--A short bio about me and my goals-->
-                <p>
-                    My name is Taber Storm Fitzgerald and I am a programmer currently in school working towards a B.S. degree in Computer Science.
-                    I work part time in an IT job for my school.
-                    I am currently expanding my skill set by making a web-site, and have many goals for the future of this web-site.
-                    Eventually I would like this site to be able to share experiences and comment about thing I have done.
-                </p>    
+    <div id="main" class="col-xs-12 col-sm-10">
 
-                <p>
-                    Currently this site is built by adding content to an HTML document, 
-                    styling and positioning the content in a CSS document, 
-                    and dynamically change information and help with style in JQuery/JavaScript.
-                </p>
-                <p>Here is a list of plans I have.</p>
-                <ul>
-                    <li>I will make this page pretty and interesting by adding graphics and more content.</li>
-                    <li>I will complete the Gm Tools and add it to the android marketplace and make it available for free with no adds.</li>
-                    <li>I will re-work some of my previous programs, expanding my TRP Adventure game and adding graphics.</li>
-                    <li>I will make an web-site based game that will be showcased and made available for play on this web-site.</li>
-                    <li>I will test with other languages such as Phython, and any others that may peak my interest.</li>
-                </ul>
-                <p>P.S. For those of you wondering about my favicon it holds my initials TSF. Its like a mini logo for me.</p>
-            </div>
+        <div ng-view></div>
 
-        </div>
-        
-        
-    </body>
+    </div>
+</div>
+
+</body>
 </html>

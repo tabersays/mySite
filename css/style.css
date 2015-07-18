@@ -1,0 +1,48 @@
+*{
+    font-family: "Times New Roman", Times, serif;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+nav{
+    background-color: darkblue;
+}
+
+nav a{
+    color: whitesmoke;
+}
+
+header{
+    background-color: darkblue;
+}
+
+header h2{
+    color: whitesmoke;
+}
+
+.nav-pills > li.active {
+    background-color: whitesmoke;
+    color: red;
+}
+
+.nav-pills > li.active > a {
+    background-color: whitesmoke;
+    color: red;
+}
+
+.nav-pills > li.active > a:focus {
+    background-color: whitesmoke;
+    color: red;
+}
+
+.nav-pills > li > a:hover {
+    background-color: red;
+    color: whitesmoke;
+}
+
+.nav-pills > li.active > a:hover {
+    background-color: red;
+    color: whitesmoke;
+}

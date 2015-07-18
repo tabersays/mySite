@@ -111,7 +111,7 @@ app.controller('SliderController', ['$scope', function ($scope) {
             $scope.decrease();
         }
         return;
-    }
+    };
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /*keyBind($event)
@@ -233,7 +233,7 @@ app.controller('SliderController', ['$scope', function ($scope) {
         return;
     };
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}])
+}]);
 app.directive('bossySlider', function ($compile) {
     var myTemplate;
     return {
