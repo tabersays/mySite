@@ -12,7 +12,7 @@
     <title>TSF</title>
     <script src="js/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/ionicons-2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="css/ionicons-2.0.1/css/ionicons.min.css"/>
     <link rel="stylesheet" href="css/octicons/octicons.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <script src="js/bootstrap.min.js"></script>
@@ -31,16 +31,32 @@
 
 
 <div class="row">
-    <nav class="col-xs-12 col-sm-2">
+    <nav class="col-sm-12 col-md-2">
         <div class="container-fluid">
-            <ul class="nav nav-pills nav-stacked" ng-controller="navController">
-                <li ng-repeat="item in navItems" ng-class="{active: isActive(item)}"><a href="#{{item.path}}">{{item.name}}</a></li>
+            <ul class="nav nav-pills nav-stacked" ng-controller="navController" ng-class="{'hidden': isMobile()}">
+                <li ng-repeat="item in navItems" ng-class="{'active': isActive(item)}"><a href="#{{item.path}}">{{item.name}}</a>
+                </li>
+            </ul>
+
+            <ul class="nav nav-pills pull-right" ng-controller="navController" ng-class="{'hidden': !isMobile()}">
+                <li class="dropdown">
+
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        Dropdown <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu pull-left">
+                        <li class="btn btn-lg"ng-repeat="item in navItems" ng-class="{'active': isActive(item)}"><a class="large" href="#{{item.path}}">{{item.name}}</a>
+                        </li>
+                    </ul>
+
+                </li>
             </ul>
             <br>
         </div>
     </nav>
 
-    <div id="main" class="col-xs-12 col-sm-10">
+    <div id="main" class="col-sm-12 col-md-10">
 
         <br>
 

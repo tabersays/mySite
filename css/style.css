@@ -43,3 +43,11 @@ header h2{
     background-color: red;
     color: whitesmoke;
 }
+
+.dropdown a {
+    font-size: 5em;
+}
+
+.large{
+    font-size: xx-large;
+}
