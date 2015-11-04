@@ -31,25 +31,10 @@
 
 
 <div class="row">
-    <nav class="col-sm-12 col-md-2">
+    <nav class="navbar">
         <div class="container-fluid">
-            <ul class="nav nav-pills nav-stacked" ng-controller="navController" ng-class="{'hidden': isMobile()}">
+            <ul class="nav nav-pills" ng-controller="navController">
                 <li ng-repeat="item in navItems" ng-class="{'active': isActive(item)}"><a href="#{{item.path}}">{{item.name}}</a>
-                </li>
-            </ul>
-
-            <ul class="nav nav-pills pull-right" ng-controller="navController" ng-class="{'hidden': !isMobile()}">
-                <li class="dropdown">
-
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">
-                        Dropdown <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu pull-left">
-                        <li class="btn btn-lg"ng-repeat="item in navItems" ng-class="{'active': isActive(item)}"><a class="large" href="#{{item.path}}">{{item.name}}</a>
-                        </li>
-                    </ul>
-
                 </li>
             </ul>
             <br>

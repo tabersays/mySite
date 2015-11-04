@@ -40,7 +40,11 @@ myApp.config(function ($routeProvider) {
         .when('/angularTest', {
             templateUrl: 'templates/slider.html',
             controller: 'angularTestController'
-        });
+        })
+        .when('/trpHeroes', {
+            templateUrl: 'templates/trpHeroes.html',
+            controller: 'trpHeroesController'
+        })
 });
 
 //main controller

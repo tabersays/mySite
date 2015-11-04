@@ -5,6 +5,7 @@ app.controller('navController', ['$scope', '$location', function ($scope, $locat
     $scope.navItems = [
         {path: '/', name: 'About'},
         {path: '/projects', name: 'Projects'},
+        {path: 'trpHeroes', name: 'TRP Heroes'},
         {path: '/crypTrd', name: 'CryptsyTrader'},
         {path: '/tabersRolePlay', name: 'TRP'},
         {path: '/gameMaster', name: 'Gm Tools'},
