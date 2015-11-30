@@ -10,42 +10,42 @@ var myApp = angular.module('myApp', ['ngRoute', 'bossy.slider']);
 myApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'templates/about.html',
+            templateUrl: '/templates/about.html',
             controller: 'mainController'
         })
         .when('/calendar', {
-            templateUrl: 'templates/calendar.html',
+            templateUrl: '/templates/calendar.html',
             controller: 'calendarController'
         })
         .when('/crypTrd', {
-            templateUrl: 'templates/crypTrd.html',
+            templateUrl: '/templates/crypTrd.html',
             controller: 'crypTrdController'
         })
         .when('/gameMaster', {
-            templateUrl: 'templates/gameMaster.html',
+            templateUrl: '/templates/gameMaster.html',
             controller: 'gameMasterController'
         })
         .when('/projects', {
-            templateUrl: 'templates/projects.html',
+            templateUrl: '/templates/projects.html',
             controller: 'projectsController'
         })
         .when('/resume', {
-            templateUrl: 'templates/resume.html',
+            templateUrl: '/templates/resume.html',
             controller: 'resumeController'
         })
         .when('/tabersRolePlay', {
-            templateUrl: 'templates/tabersRolePlay.html',
+            templateUrl: '/templates/tabersRolePlay.html',
             controller: 'tabersRolePlayController'
         })
         .when('/angularTest', {
-            templateUrl: 'templates/slider.html',
+            templateUrl: '/templates/slider.html',
             controller: 'angularTestController'
         })
         .when('/trpHeroes', {
             templateUrl: 'templates/trpHeroes.html',
             controller: 'trpHeroesController'
         });
-    //$locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 });
 
 //main controller
