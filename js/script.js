@@ -45,10 +45,6 @@ myApp.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'templates/trpHeroes.html',
             controller: 'trpHeroesController'
         });
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
 });
 
 //main controller
