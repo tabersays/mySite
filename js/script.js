@@ -7,7 +7,7 @@ var mySliders = angular.module('bossy.slider');
 
 var myApp = angular.module('myApp', ['ngRoute', 'bossy.slider']);
 
-myApp.config(function ($routeProvider) {
+myApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'templates/about.html',
@@ -44,7 +44,8 @@ myApp.config(function ($routeProvider) {
         .when('/trpHeroes', {
             templateUrl: 'templates/trpHeroes.html',
             controller: 'trpHeroesController'
-        })
+        });
+    $locationProvider.html5Mode(true);
 });
 
 //main controller
@@ -77,5 +78,9 @@ myApp.controller('tabersRolePlayController', function ($scope) {
 });
 
 myApp.controller('angularTestController', function ($scope) {
+
+});
+
+myApp.controller('trpHeroesController', function($scope) {
 
 });
